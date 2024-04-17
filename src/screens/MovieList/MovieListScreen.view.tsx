@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, Text, Image, FlatList, StyleSheet, TouchableOpacity } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useMovieListScreenContainer } from './MovieListScreen.container'
 import { styles } from "./MoviesListScreen.styles"
 import { MovieData } from '@types/movie'
@@ -27,14 +28,16 @@ export const MoviesListScreen = () => {
   if (error) return <Text>Error loading data.</Text>
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Top Movies</Text>
-      <FlatList
-        data={movies}
-        renderItem={({ item }) => <MovieCard movie={item} />}
-        keyExtractor={item => item['#IMDB_ID']}
-        showsVerticalScrollIndicator={false}
-      />
-    </View>
+    <SafeAreaView>
+      <View style={styles.container}>
+        <Text style={styles.header}>Top Movies</Text>
+        <FlatList
+          data={movies}
+          renderItem={({ item }) => <MovieCard movie={item} />}
+          keyExtractor={item => item['#IMDB_ID']}
+          showsVerticalScrollIndicator={false}
+        />
+      </View>
+    </SafeAreaView>
   );
 };
