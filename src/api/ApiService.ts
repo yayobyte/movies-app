@@ -1,5 +1,5 @@
 import ApiClient from './ApiClient.middleware'
-import { SearchResponse, SearchQuery } from '@types/movie'
+import { SearchResponse, SearchQuery, MovieData } from '@types/movie'
 
 const apiUrl = 'http://localhost'
 const apiPort = 3000
@@ -13,6 +13,6 @@ export const ApiService = {
   },
   getTopMovies: () => {
     const apiClient = new ApiClient(`${apiUrl}:${apiPort}/${moviesEndpoint}`);
-    return apiClient.get<SearchResponse>('top-movies', null);
+    return apiClient.get<MovieData[]>('top-movies', null);
   },
 }
