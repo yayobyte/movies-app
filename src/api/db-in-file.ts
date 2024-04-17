@@ -1,77 +1,107 @@
-import { SearchResponse } from "../../types/movie"
-export const movies: SearchResponse = {
-  Search: [
+import { MovieData  } from "@/types/movie"
+export const movies: MovieData[] = [
     {
-      "Title": "Interstellar",
-      "Year": "2014",
-      "imdbID": "tt0816692",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+      "#TITLE": "Interstellar",
+      "#YEAR": 2014,
+      "#IMDB_ID": "tt0816692",
+      "#RANK": 127,
+      "#ACTORS": "Matthew McConaughey, Anne Hathaway",
+      "#AKA": "Interstellar (2014) ",
+      "#IMDB_URL": "https://imdb.com/title/tt0816692",
+      "#IMDB_IV": "https://t.me/iv?url=https%3A%2F%2Fimdb.com%2Ftitle%2Ftt0816692&rhash=77ed0696a538f4",
+      "#IMG_POSTER": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+      "photo_width": 2430,
+      "photo_height": 3600
     },
     {
-      "Title": "The Science of Interstellar",
-      "Year": "2015",
-      "imdbID": "tt4415360",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMDFhNzU4MTMtYzZmNS00ZDEzLTg2MjQtYmUzZDA1ZWU4OTkzXkEyXkFqcGdeQXVyNDQ2MTMzODA@._V1_SX300.jpg"
+      "#TITLE": "Lolita from Interstellar Space",
+      "#YEAR": 2014,
+      "#IMDB_ID": "tt3506492",
+      "#RANK": 43161,
+      "#ACTORS": "Anna Morna, Christine Nguyen",
+      "#AKA": "Lolita from Interstellar Space (2014) ",
+      "#IMDB_URL": "https://imdb.com/title/tt3506492",
+      "#IMDB_IV": "https://t.me/iv?url=https%3A%2F%2Fimdb.com%2Ftitle%2Ftt3506492&rhash=77ed0696a538f4",
+      "#IMG_POSTER": "https://m.media-amazon.com/images/M/MV5BNDI1MmJmYWUtOTExZS00MGY3LWJhMzMtNThkYWJhZWQ1YmIyXkEyXkFqcGdeQXVyNjQ2MjQ5NzM@._V1_.jpg",
+      "photo_width": 703,
+      "photo_height": 1000
     },
     {
-      "Title": "Interstellar Wars",
-      "Year": "2016",
-      "imdbID": "tt5083736",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMzE5MmExYzMtYjQxYi00ZDlkLTkzMTYtMWQzNTZkMjBiYWI2L2ltYWdlXkEyXkFqcGdeQXVyNTM3MDMyMDQ@._V1_SX300.jpg"
+      "#TITLE": "Interstellar: Nolan's Odyssey",
+      "#YEAR": 2014,
+      "#IMDB_ID": "tt4172224",
+      "#RANK": 70092,
+      "#ACTORS": "Michael Caine, Jessica Chastain",
+      "#AKA": "Interstellar: Nolan's Odyssey (2014) ",
+      "#IMDB_URL": "https://imdb.com/title/tt4172224",
+      "#IMDB_IV": "https://t.me/iv?url=https%3A%2F%2Fimdb.com%2Ftitle%2Ftt4172224&rhash=77ed0696a538f4",
+      "#IMG_POSTER": "https://m.media-amazon.com/images/M/MV5BNjc4ZjkyZmMtNmRmOS00MDUzLWI4NjgtNWM4ZTI3MzliYmIwXkEyXkFqcGdeQXVyMjc5MDg0NDc@._V1_.jpg",
+      "photo_width": 1800,
+      "photo_height": 2700
     },
     {
-      "Title": "Lolita from Interstellar Space",
-      "Year": "2014",
-      "imdbID": "tt3506492",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNDI1MmJmYWUtOTExZS00MGY3LWJhMzMtNThkYWJhZWQ1YmIyXkEyXkFqcGdeQXVyNjQ2MjQ5NzM@._V1_SX300.jpg"
+      "#TITLE": "Interstellar Civil War: Shadows of the Empire",
+      "#YEAR": 2017,
+      "#IMDB_ID": "tt5056352",
+      "#RANK": 79159,
+      "#ACTORS": "Kenzie Phillips, Brad Thornton",
+      "#AKA": "Interstellar Civil War: Shadows of the Empire (2017) ",
+      "#IMDB_URL": "https://imdb.com/title/tt5056352",
+      "#IMDB_IV": "https://t.me/iv?url=https%3A%2F%2Fimdb.com%2Ftitle%2Ftt5056352&rhash=77ed0696a538f4",
+      "#IMG_POSTER": "https://m.media-amazon.com/images/M/MV5BMDJmYjQ4YmEtOTkzMS00MzQ3LWExNmUtMzgzZWQxMWJkZjk2XkEyXkFqcGdeQXVyMzM1MjQzNTk@._V1_.jpg",
+      "photo_width": 960,
+      "photo_height": 540
     },
     {
-      "Title": "Interstellar: Nolan's Odyssey",
-      "Year": "2014",
-      "imdbID": "tt4172224",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNjc4ZjkyZmMtNmRmOS00MDUzLWI4NjgtNWM4ZTI3MzliYmIwXkEyXkFqcGdeQXVyMjc5MDg0NDc@._V1_SX300.jpg"
+      "#TITLE": "The Science of Interstellar",
+      "#YEAR": 2015,
+      "#IMDB_ID": "tt4415360",
+      "#RANK": 92337,
+      "#ACTORS": "Matthew McConaughey, Kip Thorne",
+      "#AKA": "The Science of Interstellar (2015) ",
+      "#IMDB_URL": "https://imdb.com/title/tt4415360",
+      "#IMDB_IV": "https://t.me/iv?url=https%3A%2F%2Fimdb.com%2Ftitle%2Ftt4415360&rhash=77ed0696a538f4",
+      "#IMG_POSTER": "https://m.media-amazon.com/images/M/MV5BMDFhNzU4MTMtYzZmNS00ZDEzLTg2MjQtYmUzZDA1ZWU4OTkzXkEyXkFqcGdeQXVyNDQ2MTMzODA@._V1_.jpg",
+      "photo_width": 690,
+      "photo_height": 1024
     },
     {
-      "Title": "Interstellar Civil War: Shadows of the Empire",
-      "Year": "2017",
-      "imdbID": "tt5056352",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMDJmYjQ4YmEtOTkzMS00MzQ3LWExNmUtMzgzZWQxMWJkZjk2XkEyXkFqcGdeQXVyMzM1MjQzNTk@._V1_SX300.jpg"
+      "#TITLE": "Interstellar Ella",
+      "#YEAR": 2022,
+      "#IMDB_ID": "tt26699362",
+      "#RANK": 106600,
+      "#ACTORS": "Ava Augustin, Felicia Shulman",
+      "#AKA": "Interstellar Ella (2022) ",
+      "#IMDB_URL": "https://imdb.com/title/tt26699362",
+      "#IMDB_IV": "https://t.me/iv?url=https%3A%2F%2Fimdb.com%2Ftitle%2Ftt26699362&rhash=77ed0696a538f4",
+      "#IMG_POSTER": "https://m.media-amazon.com/images/M/MV5BMTEzNmQzODctMjZhNS00MGU2LThhYzctMTZiNDdjNDFkZDlkXkEyXkFqcGdeQXVyNjcwODQ2Nzc@._V1_.jpg",
+      "photo_width": 2048,
+      "photo_height": 2926
     },
     {
-      "Title": "Inside 'Interstellar'",
-      "Year": "2015",
-      "imdbID": "tt5297406",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BYzNhZjBmNmItZGQ0NS00Mzk4LWJhYTgtZDhkNWJmZTJmZDFmL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjE0OTE2MDY@._V1_SX300.jpg"
+      "#TITLE": "Interstellar Wars",
+      "#YEAR": 2016,
+      "#IMDB_ID": "tt5083736",
+      "#RANK": 147331,
+      "#ACTORS": "Brian Lally, Marlene Mc'Cohen",
+      "#AKA": "Interstellar Wars (2016) ",
+      "#IMDB_URL": "https://imdb.com/title/tt5083736",
+      "#IMDB_IV": "https://t.me/iv?url=https%3A%2F%2Fimdb.com%2Ftitle%2Ftt5083736&rhash=77ed0696a538f4",
+      "#IMG_POSTER": "https://m.media-amazon.com/images/M/MV5BMzE5MmExYzMtYjQxYi00ZDlkLTkzMTYtMWQzNTZkMjBiYWI2L2ltYWdlXkEyXkFqcGdeQXVyNTM3MDMyMDQ@._V1_.jpg",
+      "photo_width": 375,
+      "photo_height": 500
     },
     {
-      "Title": "Transformers: Interstellar",
-      "Year": "2014–2015",
-      "imdbID": "tt6046050",
-      "Type": "series",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMGYxMmM0ZWUtMzViMS00YzUxLTllZjEtYzI2YzAzYjlkMWY4XkEyXkFqcGdeQXVyNTY3NjQzNjM@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Interstellar",
-      "Year": "2005",
-      "imdbID": "tt0758429",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMTgyNzUyMTQ3OV5BMl5BanBnXkFtZTgwNDg0OTE2MzE@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Interstellar Ranger Commence",
-      "Year": "2022–",
-      "imdbID": "tt11236038",
-      "Type": "series",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMjk4MWQyZjQtMmY2ZS00YjdmLTgzMDUtYTc5ZDU5NzQzMmJmXkEyXkFqcGdeQXVyOTgwMDkwNzY@._V1_SX300.jpg"
+      "#TITLE": "Interstelar",
+      "#YEAR": 2014,
+      "#IMDB_ID": "tt4168808",
+      "#RANK": 49806,
+      "#ACTORS": "Vladislav Krivenchuk, Sergey A.",
+      "#AKA": "Interstelar (2014) ",
+      "#IMDB_URL": "https://imdb.com/title/tt4168808",
+      "#IMDB_IV": "https://t.me/iv?url=https%3A%2F%2Fimdb.com%2Ftitle%2Ftt4168808&rhash=77ed0696a538f4",
+      "#IMG_POSTER": "https://m.media-amazon.com/images/M/MV5BYjM5NjMxZDEtZjNiZS00NDNlLTllYTMtYjYyNjFkNDQ4MTg5XkEyXkFqcGdeQXVyNDcwNDE0Nzk@._V1_.jpg",
+      "photo_width": 2000,
+      "photo_height": 3000
     }
-  ],
-  "totalResults": "37",
-  "Response": "True"
-}
+  ]

@@ -19,5 +19,6 @@ export interface SearchResponse {
 }
 
 export interface SearchQuery {
-  q: string
+  q?: string
+  tt?: string
 }

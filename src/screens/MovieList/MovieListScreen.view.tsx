@@ -1,18 +1,20 @@
 import React from 'react'
 import { View, Text, Image, FlatList, StyleSheet, TouchableOpacity } from 'react-native'
 import { movies } from '@api/db-in-file'
-import { MovieListItem } from '@types/movie'
+import { MovieData } from '@types/movie'
 
-const MovieCard = ({ movie }: { movie: MovieListItem }) => (
+const MovieCard = ({ movie }: { movie: MovieData }) => (
   <TouchableOpacity style={styles.card}>
-    <Image source={{ uri: movie.Poster }} style={styles.poster} />
+    <Image source={{ uri: movie['#IMDB_URL'] }} style={styles.poster} />
     <View style={styles.info}>
-      <Text style={styles.title}>{movie.Title}</Text>
+      <Text style={styles.title}>{movie['#TITLE']}</Text>
       {/* Star rating component */}
       <Text style={styles.rating}>{'⭐'.repeat(3)} Rating</Text>
-      <Text style={styles.details}>{`IMBD Id | ${movie.imdbID}`}</Text>
-      <Text style={styles.details}>Type {`${movie.Type}`}</Text>
-      <Text style={styles.details}>Year {`${movie.Year}`}</Text>
+      <Text style={styles.details}>{`IMBD Id | ${movie['#IMDB_ID']}`}</Text>
+      <Text style={styles.details}>Rank {`${movie['#RANK']}`}</Text>
+      <Text style={styles.details}>Year {`${movie['#YEAR']}`}</Text>
+      <Text style={styles.details}>Aka {`${movie['#AKA']}`}</Text>
+      <Text style={styles.details}>Actors {`${movie['#ACTORS']}`}</Text>
     </View>
   </TouchableOpacity>
 );
