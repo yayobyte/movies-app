@@ -1,14 +1,14 @@
 import React from 'react'
 import { View, Text, Image, FlatList, StyleSheet, TouchableOpacity } from 'react-native'
-import { movies } from '@api/db-in-file'
+import { useMovieListScreenContainer } from './MovieListScreen.container'
 import { MovieData } from '@types/movie'
 
 const MovieCard = ({ movie }: { movie: MovieData }) => (
   <TouchableOpacity style={styles.card}>
-    <Image source={{ uri: movie['#IMDB_URL'] }} style={styles.poster} />
+    <Image source={{ uri: movie['#IMG_POSTER'] }} style={styles.poster} />
     <View style={styles.info}>
       <Text style={styles.title}>{movie['#TITLE']}</Text>
-      {/* Star rating component */}
+      {/* TODO: Star calculation */}
       <Text style={styles.rating}>{'⭐'.repeat(3)} Rating</Text>
       <Text style={styles.details}>{`IMBD Id | ${movie['#IMDB_ID']}`}</Text>
       <Text style={styles.details}>Rank {`${movie['#RANK']}`}</Text>
@@ -17,22 +17,26 @@ const MovieCard = ({ movie }: { movie: MovieData }) => (
       <Text style={styles.details}>Actors {`${movie['#ACTORS']}`}</Text>
     </View>
   </TouchableOpacity>
-);
+)
 
 export const MoviesListScreen = () => {
+  const { data: movies, isLoading, error } = useMovieListScreenContainer()
+
+  if (isLoading) return <Text>Loading...</Text>
+  if (error) return <Text>Error loading data.</Text>
+
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Now Showing</Text>
+      <Text style={styles.header}>Top Movies</Text>
       <FlatList
-        style={styles.list}
-        data={movies?.Search}
+        data={movies}
         renderItem={({ item }) => <MovieCard movie={item} />}
-        keyExtractor={item => item.imdbID}
+        keyExtractor={item => item['#IMDB_ID']}
         showsVerticalScrollIndicator={false}
       />
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

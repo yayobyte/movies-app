@@ -21,7 +21,7 @@ export const top10Movies = [
         "#AKA": "The Godfather",
         "#IMDB_URL": "https://www.imdb.com/title/tt0068646",
         "#IMDB_IV": "https://www.imdb.com/title/tt0068646",
-        "#IMG_POSTER": "https://m.media-amazon.com/images/I/71p3IHyEvTL._AC_SY679_.jpg",
+        "#IMG_POSTER": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
         "photo_width": 679,
         "photo_height": 1000
     },
@@ -47,7 +47,7 @@ export const top10Movies = [
         "#AKA": "Schindler's List",
         "#IMDB_URL": "https://www.imdb.com/title/tt0108052",
         "#IMDB_IV": "https://www.imdb.com/title/tt0108052",
-        "#IMG_POSTER": "https://m.media-amazon.com/images/I/51CMT0FAX8L.jpg",
+        "#IMG_POSTER": "https://m.media-amazon.com/images/M/MV5BMTg3MDc4ODgyOF5BMl5BanBnXkFtZTgwNzY1ODIyNjM@._V1_.jpg",
         "photo_width": 500,
         "photo_height": 740
     },
@@ -60,7 +60,7 @@ export const top10Movies = [
         "#AKA": "Pulp Fiction",
         "#IMDB_URL": "https://www.imdb.com/title/tt0110912",
         "#IMDB_IV": "https://www.imdb.com/title/tt0110912",
-        "#IMG_POSTER": "https://m.media-amazon.com/images/I/61ZmJqUiYCL._AC_SY679_.jpg",
+        "#IMG_POSTER": "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
         "photo_width": 679,
         "photo_height": 1000
     },
@@ -99,7 +99,7 @@ export const top10Movies = [
         "#AKA": "Forrest Gump",
         "#IMDB_URL": "https://www.imdb.com/title/tt0109830",
         "#IMDB_IV": "https://www.imdb.com/title/tt0109830",
-        "#IMG_POSTER": "https://m.media-amazon.com/images/I/61v5jMDvpKL._AC_SY741_.jpg",
+        "#IMG_POSTER": "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
         "photo_width": 741,
         "photo_height": 1080
     },
@@ -112,7 +112,7 @@ export const top10Movies = [
         "#AKA": "Inception",
         "#IMDB_URL": "https://www.imdb.com/title/tt1375666",
         "#IMDB_IV": "https://www.imdb.com/title/tt1375666",
-        "#IMG_POSTER": "https://m.media-amazon.com/images/I/91kfyxXtcEL._AC_SY679_.jpg",
+        "#IMG_POSTER": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
         "photo_width": 679,
         "photo_height": 1000
     },
