@@ -10,6 +10,20 @@ export const theme = {
     xl: spacingUnit * 3,
     xxl: spacingUnit * 4
   },
+  borderRadius: {
+    sm: spacingUnit / 2,
+    regular: spacingUnit,
+    lg: spacingUnit * 1.5,
+  },
+  elevation: {
+    regular: 3,
+  },
+  shadow: {
+    shadowColor: '#000', // for iOS shadow
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
   fontSize: {
     sm: spacingUnit,
     md: spacingUnit * 1.5,
@@ -25,6 +39,7 @@ export const theme = {
     lightText: '#586585',
     blueLight: '#87a5c0',
     highlight: '#ecf2f5',
+    white: '#ffffff'
   }
 }
 

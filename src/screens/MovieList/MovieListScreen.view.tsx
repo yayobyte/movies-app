@@ -1,9 +1,10 @@
 import React from 'react'
-import { View, Text, Image, FlatList, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useMovieListScreenContainer } from './MovieListScreen.container'
 import { styles } from "./MoviesListScreen.styles"
 import { MovieData } from '@types/movie'
+import { Loader } from '@src/components/ui/loader/Loader.view';
 
 const MovieCard = ({ movie }: { movie: MovieData }) => (
   <TouchableOpacity style={styles.card}>
@@ -24,19 +25,23 @@ const MovieCard = ({ movie }: { movie: MovieData }) => (
 export const MoviesListScreen = () => {
   const { data: movies, isLoading, error } = useMovieListScreenContainer()
 
-  if (isLoading) return <Text>Loading...</Text>
   if (error) return <Text>Error loading data.</Text>
+
 
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <Text style={styles.header}>Top Movies</Text>
-        <FlatList
-          data={movies}
-          renderItem={({ item }) => <MovieCard movie={item} />}
-          keyExtractor={item => item['#IMDB_ID']}
-          showsVerticalScrollIndicator={false}
-        />
+        {isLoading ? <Loader /> : (
+          <View>
+            <Text style={styles.header}>Random Movies</Text>
+            <FlatList
+              data={movies}
+              renderItem={({ item }) => <MovieCard movie={item} />}
+              keyExtractor={item => item['#IMDB_ID']}
+              showsVerticalScrollIndicator={false}
+            />
+          </View>
+        )}
       </View>
     </SafeAreaView>
   )

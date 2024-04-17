@@ -1,6 +1,8 @@
 import { StyleSheet } from "react-native"
 import { theme } from "@src/config/ThemeContext"
 
+const POSTER_WIDTH = 100
+const POSTER_HEIGHT = 150
 
 export const styles = StyleSheet.create({
     container: {
@@ -10,47 +12,42 @@ export const styles = StyleSheet.create({
       flex: 1,
     },
     header: {
-      fontSize: 24,
+      fontSize: theme.fontSize.xl,
       fontWeight: 'bold',
-      paddingVertical: 20,
+      paddingVertical: theme.spacing.md,
       backgroundColor: '#fff',
       textAlign: 'center',
-      borderBottomColor: '#e0e0e0',
-      borderBottomWidth: 1,
     },
     card: {
-      backgroundColor: '#fff',
-      borderRadius: 10,
-      padding: 10,
-      marginHorizontal: 20,
-      marginTop: 20,
+      backgroundColor: theme.colors.white,
+      borderRadius: theme.borderRadius.regular,
+      padding: theme.spacing.lg,
+      marginHorizontal: theme.spacing.lg,
+      marginTop: theme.spacing.xl,
       flexDirection: 'row',
-      elevation: 3, // for Android shadow
-      shadowColor: '#000', // for iOS shadow
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.25,
-      shadowRadius: 3.84,
+      elevation: theme.elevation.regular, // for Android shadow
+      ...theme.shadow,
     },
     poster: {
-      width: 100,
-      height: 150,
-      borderRadius: 8,
+      width: POSTER_WIDTH,
+      height: POSTER_HEIGHT,
+      borderRadius: theme.spacing.md,
     },
     info: {
       flex: 1,
-      marginLeft: 10,
+      marginLeft: theme.spacing.lg,
     },
     title: {
-      fontSize: 18,
+      fontSize: theme.fontSize.regular,
       fontWeight: 'bold',
     },
     rating: {
-      fontSize: 16,
-      marginVertical: 4,
+      fontSize: theme.fontSize.regular,
+      marginVertical: theme.spacing.sm,
     },
     details: {
-      fontSize: 14,
-      color: 'gray',
+      fontSize: theme.fontSize.regular,
+      color: theme.colors.lightText,
     },
   })
   
