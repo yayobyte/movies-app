@@ -39,5 +39,5 @@ export const MoviesListScreen = () => {
         />
       </View>
     </SafeAreaView>
-  );
-};
+  )
+}
