@@ -1,14 +1,17 @@
-export interface MovieData {
-    "#TITLE": string;
-    "#YEAR": number;
-    "#IMDB_ID": string;
-    "#RANK": number;
-    "#ACTORS": string;
-    "#AKA": string;
-    "#IMDB_URL": string;
-    "#IMDB_IV": string;
-    "#IMG_POSTER": string;
-    photo_width: number;
-    photo_height: number;
-  }
-  
+export interface MovieListItem {
+  Title: string
+  Year: string
+  imdbID: string
+  Type: string
+  Poster: string
+}
+
+export interface SearchResponse {
+  Search: MovieListItem[]
+  totalResults: string
+  Response: string
+}
+
+export interface SearchQuery {
+  s: string
+}

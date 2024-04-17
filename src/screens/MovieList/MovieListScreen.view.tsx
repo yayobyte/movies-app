@@ -1,17 +1,18 @@
 import React from 'react'
 import { View, Text, Image, FlatList, StyleSheet, TouchableOpacity } from 'react-native'
 import { movies } from '@api/db-in-file'
-import { MovieData } from '@types/movie'
+import { MovieListItem } from '@types/movie'
 
-const MovieCard = ({ movie }: { movie: MovieData }) => (
+const MovieCard = ({ movie }: { movie: MovieListItem }) => (
   <TouchableOpacity style={styles.card}>
-    <Image source={{ uri: movie['#IMG_POSTER'] }} style={styles.poster} />
+    <Image source={{ uri: movie.Poster }} style={styles.poster} />
     <View style={styles.info}>
-      <Text style={styles.title}>{movie['#TITLE']}</Text>
+      <Text style={styles.title}>{movie.Title}</Text>
       {/* Star rating component */}
       <Text style={styles.rating}>{'⭐'.repeat(3)} Rating</Text>
-      <Text style={styles.details}>{`Aka | ${movie['#AKA']}`}</Text>
-      <Text style={styles.details}>{`${movie['#RANK']} | ${movie['#YEAR']}`}</Text>
+      <Text style={styles.details}>{`IMBD Id | ${movie.imdbID}`}</Text>
+      <Text style={styles.details}>Type {`${movie.Type}`}</Text>
+      <Text style={styles.details}>Year {`${movie.Year}`}</Text>
     </View>
   </TouchableOpacity>
 );
@@ -22,9 +23,9 @@ export const MoviesListScreen = () => {
       <Text style={styles.header}>Now Showing</Text>
       <FlatList
         style={styles.list}
-        data={movies}
+        data={movies?.Search}
         renderItem={({ item }) => <MovieCard movie={item} />}
-        keyExtractor={item => item["#IMDB_ID"]}
+        keyExtractor={item => item.imdbID}
         showsVerticalScrollIndicator={false}
       />
     </View>
