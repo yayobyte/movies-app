@@ -1,4 +1,4 @@
-import { MovieData, SearchQuery, SearchResponse} from "../types/movie"
+import { MovieData, SearchQuery, SearchResponse, MovieIbmdData} from "../types/movie"
 import { top10Movies } from "./data"
 
 export class MovieModel {
@@ -22,7 +22,7 @@ export class MovieModel {
         return data.description
     }
 
-    static async getMovieById({ tt }: SearchQuery): Promise<MovieData | undefined> {
+    static async getMovieById({ tt }: SearchQuery): Promise<MovieIbmdData | undefined> {
         if (!tt) {
             throw new Error("IMDb ID 'tt' is required to fetch movie details")
         }
@@ -30,9 +30,10 @@ export class MovieModel {
         const url = new URL(MovieModel.baseUrl)
         url.searchParams.append('tt', tt)
 
-        const response = await fetch(url.toString())
-        const data: SearchResponse = await response.json();
+        console.log(url.toString())
 
+        const response = await fetch(url.toString())
+        const data = await response.json()
         if (!response.ok) {
             throw new Error(`API call failed with status ${response.status}: ${response.statusText}`)
         }

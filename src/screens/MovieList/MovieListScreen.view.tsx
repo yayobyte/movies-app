@@ -4,7 +4,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useMovieListScreenContainer } from './MovieListScreen.container'
 import { styles } from "./MoviesListScreen.styles"
 import { MovieData } from '@types/movie'
-import { Loader } from '@src/components/ui/loader/Loader.view';
+import { Loader } from '@src/components/ui/loader/Loader.view'
+import { ErrorComponent } from '@components/ui/error/error.view'
 
 const MovieCard = ({ movie }: { movie: MovieData }) => (
   <TouchableOpacity style={styles.card}>
@@ -25,8 +26,9 @@ const MovieCard = ({ movie }: { movie: MovieData }) => (
 export const MoviesListScreen = () => {
   const { data: movies, isLoading, error } = useMovieListScreenContainer()
 
-  if (error) return <Text>Error loading data.</Text>
-
+  if (error) return (
+      <ErrorComponent message={'Error loading movies'} onRetry={() => {}}/>
+  )
 
   return (
     <SafeAreaView>
