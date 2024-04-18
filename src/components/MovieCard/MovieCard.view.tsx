@@ -1,14 +1,16 @@
 import React from 'react'
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
+
 import { MovieData } from '@types/movie'
+
 import { styles } from './MovieCard.styles'
-import { useTheme } from '@src/hooks/useTheme'
+import { movieCardContainer } from './MovieCard.container'
 
 export const MovieCard = ({ movie }: { movie: MovieData }) => {
-		const { theme } = useTheme()
+		const { handlePress, theme } = movieCardContainer({ movie })
     return (
-		<TouchableOpacity style={styles.card}>
+		<TouchableOpacity style={styles.card} onPress={handlePress}>
 			<Image source={{ uri: movie['#IMG_POSTER'] }} style={styles.poster} />
 			<View style={styles.info}>
 				<Text style={styles.title}>{movie['#TITLE']}</Text>
@@ -21,7 +23,7 @@ export const MovieCard = ({ movie }: { movie: MovieData }) => {
 					<Text style={styles.year}>{`${movie['#YEAR']}`}</Text>
 				</View>
 				<View style={styles.detailItem}>
-					<Icon name="people" size={20} color={theme.colors.primary} />
+					<Icon name="people" size={theme.fontSize.regularLarge} color={theme.colors.primary} />
 					<Text style={[styles.details, styles.actors]} numberOfLines={2} ellipsizeMode="tail">
           	{`${movie['#ACTORS']}`}
         	</Text>
