@@ -5,9 +5,6 @@ export class MovieController {
 
     static async searchMoviesByTitle(req: Request<{}, {}, {}, { q: string }>, res: Response) {
         const { q } = req.query;
-        if (!q) {
-            return res.status(400).json({ message: 'Query parameter "q" is required.' });
-        }
         try {
             const movies = await MovieModel.searchMoviesByTitle({ q });
             res.json(movies);

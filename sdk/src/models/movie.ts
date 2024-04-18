@@ -1,17 +1,25 @@
 import { MovieData, SearchQuery, SearchResponse, MovieIbmdData} from "../types/movie"
 import { top10Movies } from "./data"
 
+const searchQueries = [
+    "action", "drama", "comedy", "romance", "thriller",
+    "sci-fi", "horror", "documentary", "adventure", "fantasy",
+    "King", "Boat", "Taxi", "Car", "Bus",
+  ];  
+
 export class MovieModel {
-    static baseUrl = 'https://search.imdbot.workers.dev/'
+    static baseUrl = 'https://search.imdbot.workers.dev/'    
 
     static async searchMoviesByTitle({ q }: SearchQuery): Promise<MovieData[]> {
-        if (!q) {
-            throw new Error("Query string 'q' is required to search movies")
+        const url = new URL(MovieModel.baseUrl)
+        if (!q) { //In case q is not sent, it will query random movies for the firs load
+            const randomQuery = searchQueries[Math.floor(Math.random() * searchQueries.length)]
+            url.searchParams.append('q', randomQuery)
+        } else {
+            url.searchParams.append('q', q)
         }
 
-        const url = new URL(MovieModel.baseUrl)
-        url.searchParams.append('q', q)
-
+        console.log(url.toString())
         const response = await fetch(url.toString())
         const data: SearchResponse = await response.json()
 
