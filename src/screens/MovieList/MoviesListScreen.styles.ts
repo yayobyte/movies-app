@@ -19,36 +19,14 @@ export const styles = StyleSheet.create({
       backgroundColor: '#fff',
       textAlign: 'center',
     },
-    card: {
-      backgroundColor: theme.colors.white,
-      borderRadius: theme.borderRadius.regular,
-      padding: theme.spacing.lg,
-      marginHorizontal: theme.spacing.lg,
-      marginVertical: theme.spacing.lg,
-      flexDirection: 'row',
-      elevation: theme.elevation.regular, // for Android shadow
-      ...theme.shadow,
-    },
     poster: {
       width: POSTER_WIDTH,
       height: POSTER_HEIGHT,
       borderRadius: theme.spacing.md,
     },
-    info: {
-      flex: 1,
-      marginLeft: theme.spacing.lg,
-    },
-    title: {
-      fontSize: theme.fontSize.regular,
-      fontWeight: 'bold',
-    },
     rating: {
       fontSize: theme.fontSize.regular,
       marginVertical: theme.spacing.sm,
-    },
-    details: {
-      fontSize: theme.fontSize.regular,
-      color: theme.colors.lightText,
     },
   })
   

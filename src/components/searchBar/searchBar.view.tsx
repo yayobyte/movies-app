@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { View, TextInput, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { useTheme } from '@src/hooks/useTheme'
-import { styles } from './searchBar.styles'
+import { styles } from './SearchBar.styles'
 
 export const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState('')
@@ -12,7 +12,7 @@ export const SearchBar = ({ onSearch }) => {
 
   return (
     <View style={styles.container}>
-      <Icon name="search" size={theme.fontSize.lg} color={theme.colors.lightText} style={styles.icon} />
+      <Icon name="search" size={theme.fontSize.lg} color={theme.colors.primary} style={styles.icon} />
       <TextInput
         style={styles.input}
         value={query}

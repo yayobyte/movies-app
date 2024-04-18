@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { styles } from './error.styles'
+import { styles } from './Error.styles'
 
 export const ErrorComponent = ({ message, onRetry }) => {
     return (

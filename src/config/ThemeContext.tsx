@@ -28,6 +28,7 @@ export const theme = {
     sm: spacingUnit,
     md: spacingUnit * 1.5,
     regular: spacingUnit * 2,
+    regularLarge: spacingUnit * 2.5,
     lg: spacingUnit * 3,
     xl: spacingUnit * 3.5,
     header: spacingUnit * 4,
@@ -39,6 +40,7 @@ export const theme = {
     lightText: '#586585',
     blueLight: '#87a5c0',
     highlight: '#ecf2f5',
+    warning: '#f0c14b',
     white: '#ffffff'
   }
 }
