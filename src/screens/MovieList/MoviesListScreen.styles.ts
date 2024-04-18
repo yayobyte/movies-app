@@ -6,6 +6,7 @@ const POSTER_HEIGHT = 150
 
 export const styles = StyleSheet.create({
     container: {
+      flex: 1,
       backgroundColor: theme.colors.background,
     },
     list: {
@@ -23,7 +24,7 @@ export const styles = StyleSheet.create({
       borderRadius: theme.borderRadius.regular,
       padding: theme.spacing.lg,
       marginHorizontal: theme.spacing.lg,
-      marginTop: theme.spacing.xl,
+      marginVertical: theme.spacing.lg,
       flexDirection: 'row',
       elevation: theme.elevation.regular, // for Android shadow
       ...theme.shadow,

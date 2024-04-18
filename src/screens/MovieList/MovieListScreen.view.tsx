@@ -6,6 +6,7 @@ import { styles } from "./MoviesListScreen.styles"
 import { MovieData } from '@types/movie'
 import { Loader } from '@src/components/ui/loader/Loader.view'
 import { ErrorComponent } from '@components/ui/error/error.view'
+import { SearchBar } from '@components/searchBar/searchBar.view'
 
 const MovieCard = ({ movie }: { movie: MovieData }) => (
   <TouchableOpacity style={styles.card}>
@@ -13,7 +14,6 @@ const MovieCard = ({ movie }: { movie: MovieData }) => (
     <View style={styles.info}>
       <Text style={styles.title}>{movie['#TITLE']}</Text>
       {/* TODO: Star calculation */}
-      <Text style={styles.rating}>{'⭐'.repeat(3)} Rating</Text>
       <Text style={styles.details}>{`IMBD Id | ${movie['#IMDB_ID']}`}</Text>
       <Text style={styles.details}>Rank {`${movie['#RANK']}`}</Text>
       <Text style={styles.details}>Year {`${movie['#YEAR']}`}</Text>
@@ -24,25 +24,27 @@ const MovieCard = ({ movie }: { movie: MovieData }) => (
 )
 
 export const MoviesListScreen = () => {
-  const { data: movies, isLoading, error } = useMovieListScreenContainer()
+  const { data: movies, isLoading, error, search, setSearch } = useMovieListScreenContainer()
 
   if (error) return (
       <ErrorComponent message={'Error loading movies'} onRetry={() => {}}/>
   )
-
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
-        {isLoading ? <Loader /> : (
-          <View>
-            <Text style={styles.header}>Random Movies</Text>
-            <FlatList
-              data={movies}
-              renderItem={({ item }) => <MovieCard movie={item} />}
-              keyExtractor={item => item['#IMDB_ID']}
-              showsVerticalScrollIndicator={false}
-            />
-          </View>
+      <Text style={styles.header}>Random Movies</Text>
+      <SearchBar onSearch={setSearch} />
+      {isLoading ? (
+          <Loader />
+        ) : error ? (
+          <ErrorComponent message={'Error loading movies'} onRetry={() => setSearch('')} />
+        ) : (
+          <FlatList
+            data={movies}
+            renderItem={({ item }) => <MovieCard movie={item} />}
+            keyExtractor={item => item['#IMDB_ID']}
+            showsVerticalScrollIndicator={true}
+          />
         )}
       </View>
     </SafeAreaView>
