@@ -26,13 +26,15 @@ const MovieCard = ({ movie }: { movie: MovieData }) => (
 export const MoviesListScreen = () => {
   const { data: movies, isLoading, error, search, setSearch } = useMovieListScreenContainer()
 
+  const title = search.length > 0 ? 'Movies List' : 'Random Movies'
+
   if (error) return (
       <ErrorComponent message={'Error loading movies'} onRetry={() => {}}/>
   )
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
-      <Text style={styles.header}>Random Movies</Text>
+      <Text style={styles.header}>{title}</Text>
       <SearchBar onSearch={setSearch} />
       {isLoading ? (
           <Loader />
