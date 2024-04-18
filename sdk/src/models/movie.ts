@@ -1,5 +1,4 @@
 import { MovieData, SearchQuery, SearchResponse, MovieIbmdData} from "../types/movie"
-import { top10Movies } from "./data"
 
 const searchQueries = [
     "action", "drama", "comedy", "romance", "thriller",
@@ -39,17 +38,11 @@ export class MovieModel {
         url.searchParams.append('tt', tt)
 
         console.log(url.toString())
-
         const response = await fetch(url.toString())
         const data = await response.json()
         if (!response.ok) {
             throw new Error(`API call failed with status ${response.status}: ${response.statusText}`)
         }
-
-        return data.description.length > 0 ? data.description[0] : undefined
-    }
-
-    static async getTop10Movies(): Promise<MovieData[]> {
-        return Promise.resolve(top10Movies)
+        return data.short
     }
 }

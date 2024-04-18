@@ -5,7 +5,7 @@ import { ApiService } from '@api/ApiService'
 export const useMovieListScreenContainer = () => {
   const [search, setSearch] = useState('')
   const { error, isLoading, data } = useQuery({
-    queryKey: ['getRandomMovies', search],
+    queryKey: ['search', search],
     queryFn: () => ApiService.searchByString(search ?? undefined),
   })
   return {

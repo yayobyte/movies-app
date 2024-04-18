@@ -6,6 +6,7 @@ class ApiClient {
     }
     
     async get<T>(endpoint: string, urlParams: string | null): Promise<T> {
+      console.log(`${this.baseUrl}/${endpoint}${urlParams ? `?${urlParams}` : ''}`)
       try {
         const response = await fetch(`${this.baseUrl}/${endpoint}${urlParams ? `?${urlParams}` : ''}`, {
           method: 'GET',
@@ -13,8 +14,10 @@ class ApiClient {
             'Content-Type': 'application/json',
           },
         })
+
+        const result = await response.json()
         
-        return await response.json()
+        return result
       } catch (error) {
         console.error('Error during GET request:', error)
         throw error
