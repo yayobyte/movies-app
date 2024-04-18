@@ -1,10 +1,10 @@
 import React from 'react';
 import { ScrollView, View, Text, Image, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
 import { useRoute } from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useMovieDetailsContainer } from './MovieDetailsScreen.container';
 import { Loader } from '@src/components/UI/Loader/Loader.view'
 import { ErrorComponent } from '@src/components/UI/Error/Error.view'
+import { StarsRating } from '@src/components/StarsRating/StarsRating.view';
 
 import { styles } from './MovieDetailsScreen.styles'
 
@@ -26,13 +26,7 @@ export const MovieDetailsScreen = () => {
           <Text style={styles.movieTitle}>{data?.name}</Text>
           <Text style={styles.movieGenre}>{data?.genre?.join(', ')}</Text>
 
-          <View style={styles.starRating}>
-            <Icon name="star" size={20} color="#ffd700" />
-            <Icon name="star" size={20} color="#ffd700" />
-            <Icon name="star" size={20} color="#ffd700" />
-            <Icon name="star" size={20} color="#ffd700" />
-            <Icon name="star-half" size={20} color="#ffd700" />
-          </View>
+          <StarsRating ratingValue={data?.aggregateRating?.ratingValue} />
           
           <View style={styles.synopsisContainer}>
             <Text style={styles.synopsisTitle}>Synopsis</Text>
