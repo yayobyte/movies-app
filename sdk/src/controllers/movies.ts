@@ -28,13 +28,4 @@ export class MovieController {
             res.status(500).json({ message: 'Internal server error', error: error.message })
         }
     }
-
-    static async getTopMovies(req: Request, res: Response) {
-        try {
-            const movies = await MovieModel.getTop10Movies()
-            res.json(movies)
-        } catch (error: any) {
-            res.status(500).json({ message: 'Internal server error', error: error.message })
-        }
-    }
 }
