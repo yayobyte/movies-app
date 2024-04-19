@@ -17,6 +17,7 @@ export const styles = StyleSheet.create({
       width: POSTER_WIDTH,
       height: POSTER_HEIGHT,
       borderRadius: theme.spacing.md,
+      resizeMode: 'cover',
     },
     info: {
       flex: 1,
@@ -30,11 +31,13 @@ export const styles = StyleSheet.create({
     details: {
       fontSize: theme.fontSize.regular,
       marginLeft: theme.spacing.md,
+      color: theme.colors.lightText,
     },
     year: {
       fontSize: theme.fontSize.regular,
       marginLeft: theme.spacing.md,
       fontWeight: 'bold',
+      color: theme.colors.lightText,
     },
     detailItem: {
       flexDirection: 'row',
@@ -43,5 +46,6 @@ export const styles = StyleSheet.create({
     },
     actors: {
       flexShrink: 1,
+      color: theme.colors.secondary,
     },
   })

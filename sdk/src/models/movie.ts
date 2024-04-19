@@ -43,6 +43,10 @@ export class MovieModel {
         if (!response.ok) {
             throw new Error(`API call failed with status ${response.status}: ${response.statusText}`)
         }
-        return data.short
+        console.log(data?.main?.featuredReviews?.edges)
+        return { 
+            ...data.short,
+            featuredReviews: data?.main?.featuredReviews
+        }
     }
 }

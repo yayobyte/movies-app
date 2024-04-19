@@ -1,36 +1,42 @@
-# TypeScript Example
+# Movie Finder App
 
-<p>
-  <!-- iOS -->
-  <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  <!-- Android -->
-  <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  <!-- Web -->
-  <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-</p>
+## Overview
+The application allows users to search for movies using the `https://search.imdbot.workers.dev/` API, and it showcases functionality both on iOS and Android platforms.
+Make sure you test this endpoint first as sometimes it is out
 
-```sh
-npx create-react-native-app -t with-typescript
-```
+## Architecture
+- **/sdk**: Contains an Express.js application that serves as a backend SDK to query the movie database API. This SDK can be integrated into both the React Native and React.js applications.
+- **/src**: Contains the React Native application codebase, which provides the user interface for mobile devices.
 
-TypeScript is a superset of JavaScript which gives you static types and powerful tooling in Visual Studio Code including autocompletion and useful inline warnings for type errors.
+## Getting Started
 
-## 🚀 How to use
+### Prerequisites
+- Node.js and npm (or Yarn)
+- Expo CLI (for running the React Native app)
+- Ensure you have React Native setup for development: [Setting up the development environment](https://reactnative.dev/docs/environment-setup).
 
-#### Creating a new project
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yayobyte/movies-app.git
+   cd movies app
+   ```
+2. **Install dependencies**
+  ```bash
+  yarn install
+  cd sdk
+  yarn install
+  cd ..
+  ```
+3. **Start the SDK**
+  ```bash
+  yarn start-sdk
+  ```
+4. **Start the React Native App**
+Open a new terminal and ensure that you are in the root folder
+  ```bash
+  yarn start
+  ```
 
-- Install the CLI: `npm i -g expo-cli`
-- Create a project: `npx create-react-native-app -t with-typescript`
-- `cd` into the project
-
-### Adding TypeScript to existing projects
-
-- Create a blank TypeScript config: `touch tsconfig.json`
-- Run `yarn start` or `npm run start` to automatically configure TypeScript
-- Rename files to TypeScript, `.tsx` for React components and `.ts` for plain typescript files
-
-> 💡 You can disable the TypeScript setup in Expo CLI with the environment variable `EXPO_NO_TYPESCRIPT_SETUP=1 expo start`
-
-## 📝 Notes
-
-- [Expo TypeScript guide](https://docs.expo.dev/versions/latest/guides/typescript/)
+### Troubleshooting
+If encountering issues where SDK dependencies are not recognized, ensure that you have run yarn install within the /sdk directory as mentioned in the installation steps. This setup allows the SDK to operate independently, requiring separate dependency management.

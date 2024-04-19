@@ -1,7 +1,7 @@
 import ApiClient from './ApiClient.middleware'
 import { SearchResponse, Movie } from '@types/movie'
 
-const apiUrl = 'http://192.168.1.160'
+const apiUrl = 'http://localhost'
 const apiPort = 3000
 const moviesRoute = 'movies'
 

@@ -14,6 +14,7 @@ export const theme = {
     sm: spacingUnit / 2,
     regular: spacingUnit,
     lg: spacingUnit * 1.5,
+    xxl: spacingUnit * 3,
   },
   elevation: {
     regular: 3,

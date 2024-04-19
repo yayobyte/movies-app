@@ -24,6 +24,13 @@ export const styles = StyleSheet.create({
       height: POSTER_HEIGHT,
       borderRadius: theme.spacing.md,
     },
+    emptyMessage: {
+      textAlign: 'center',
+      fontSize: theme.fontSize.regular,
+      marginTop: theme.spacing.xl,
+      marginHorizontal: theme.spacing.xl,
+      color: theme.colors.secondary,
+    },
     rating: {
       fontSize: theme.fontSize.regular,
       marginVertical: theme.spacing.sm,

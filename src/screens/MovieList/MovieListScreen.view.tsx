@@ -8,14 +8,15 @@ import { ErrorComponent } from '@src/components/UI/Error/Error.view'
 import { SearchBar } from '@src/components/SearchBar/SearchBar.view'
 import { MovieCard } from "@components/MovieCard/MovieCard.view"
 
+//TODO: Intl strings in a separated file
+const ERROR_MESSAGE = 'Error loading movies or the search.imdbot.workers.dev api might be offline'
+const EMPTY_LIST = 'No results with the provided strings or the search.imdbot.workers.dev api might be offline'
+
 export const MoviesListScreen = () => {
   const { data: movies, isLoading, error, search, setSearch } = useMovieListScreenContainer()
 
   const title = search.length > 0 ? 'Movies List' : 'Random Movies'
 
-  if (error) return (
-      <ErrorComponent message={'Error loading movies'} onRetry={() => {}}/>
-  )
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
@@ -24,13 +25,16 @@ export const MoviesListScreen = () => {
       {isLoading ? (
           <Loader />
         ) : error ? (
-          <ErrorComponent message={'Error loading movies'} onRetry={() => setSearch('')} />
+          <ErrorComponent message={ERROR_MESSAGE} onRetry={() => setSearch('')} />
         ) : (
           <FlatList
             data={movies}
             renderItem={({ item }) => <MovieCard movie={item} />}
             keyExtractor={item => item['#IMDB_ID']}
             showsVerticalScrollIndicator={true}
+            ListEmptyComponent={() => (
+              <Text style={styles.emptyMessage}>{EMPTY_LIST}</Text>
+            )}
           />
         )}
       </View>
