@@ -38,6 +38,7 @@ export class MovieModel {
           "#IMDB_URL": `https://www.imdb.com/title/${movie.imdbID}/`,
           "#IMDB_IV": "",
           "#IMG_POSTER": movie.Poster,
+          "#TYPE": movie.Type,
           photo_width: 300,
           photo_height: 450
         }))
