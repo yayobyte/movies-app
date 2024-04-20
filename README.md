@@ -20,7 +20,7 @@ Make sure you test this endpoint first as sometimes it is out.
 - Install Xcode from app store
 - Install Command Line Tools: Open Xcode, choose Settings... from the Xcode menu (or press cmd ⌘ + ,). Go to the Locations and install the tools by selecting the most recent version in the Command Line Tools dropdown.
 - Install a new simulator: 
-- Request the sdk api key or make sure you received it by email
+- Request the sdk api key or make sure you received it by email or check this document: [ApiKey](https://docs.google.com/document/d/15UDYXj7u2WHlaUD5lRI-93KznPAPhoXn10ADI-DQJqU/edit#heading=h.s909brly4zja)
 - Have the `3000` and `3001` ports available to run the `react` app and `sdk` respectively
 
 ### Installation
@@ -76,7 +76,7 @@ If you want to run the app directly to ios or android run any of these
 ![Video Preview](./docs/ios_app.gif)
 
 ### Android Simulator
-![Video Preview](./docs/ios_app.gif)
+![Video Preview](./docs/android_app.gif)
 
 ### Web
 ![Video Preview](./docs/web_app.gif)
