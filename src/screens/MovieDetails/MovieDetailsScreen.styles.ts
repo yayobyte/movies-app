@@ -17,6 +17,36 @@ export const styles = StyleSheet.create({
     detailsContainer: {
       padding: theme.spacing.lg,
     },
+    directorContainer: {
+      marginBottom: theme.spacing.md,
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
+    director: {
+      fontSize: theme.fontSize.regularLarge,
+      color: theme.colors.lightText,
+      marginLeft: theme.spacing.md,
+    },
+    durationContainer: {
+      marginBottom: theme.spacing.xl,
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
+    duration: {
+      fontSize: theme.fontSize.regular,
+      color: theme.colors.secondary,
+      marginLeft: theme.spacing.md,
+    },
+    ratingContainer: {
+      marginBottom: theme.spacing.md,
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
+    rating: {
+      fontSize: theme.fontSize.regular,
+      color: theme.colors.lightText,
+      marginLeft: theme.spacing.md,
+    },
     movieTitle: {
       fontSize: theme.fontSize.lg,
       fontWeight: 'bold',
@@ -54,6 +84,12 @@ export const styles = StyleSheet.create({
     actorName: {
       fontSize: theme.fontSize.regular,
       color: theme.colors.lightText,
+      marginLeft: theme.spacing.md,
+    },
+    detailItem: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginBottom: theme.spacing.md,
     },
     reviewsContainer: {
       paddingVertical: theme.spacing.md,

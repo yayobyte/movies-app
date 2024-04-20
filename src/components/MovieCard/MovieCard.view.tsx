@@ -2,13 +2,13 @@ import React from 'react'
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
-import { MovieData } from '@types/movie'
+import { MovieData } from "sdk/src/types/movie"
 
 import { styles } from './MovieCard.styles'
 import { movieCardContainer } from './MovieCard.container'
 
 export const MovieCard = ({ movie }: { movie: MovieData }) => {
-		const { handlePress, theme } = movieCardContainer({ movie })
+	const { handlePress, theme } = movieCardContainer({ movie })
     return (
 		<TouchableOpacity style={styles.card} onPress={handlePress}>
 			<Image source={{ uri: movie['#IMG_POSTER'] }} style={styles.poster} />

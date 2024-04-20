@@ -2,11 +2,11 @@ export interface MovieData {
   "#TITLE": string
   "#YEAR": number
   "#IMDB_ID": string
-  "#RANK": number
-  "#ACTORS": string
-  "#AKA": string
-  "#IMDB_URL": string
-  "#IMDB_IV": string
+  "#RANK"?: number
+  "#ACTORS"?: string
+  "#AKA"?: string
+  "#IMDB_URL"?: string
+  "#IMDB_IV"?: string
   "#IMG_POSTER": string
   "#TYPE"?: string
   photo_width: number
@@ -24,13 +24,13 @@ export interface SearchQuery {
   tt?: string
 }
 
-interface Person {
+export interface Person {
   '@type': 'Person'
   url: string
   name: string
 }
 
-interface AggregateRating {
+export interface AggregateRating {
   '@type': 'AggregateRating'
   ratingCount: number
   bestRating: number
@@ -38,7 +38,7 @@ interface AggregateRating {
   ratingValue: number
 }
 
-interface VideoObject {
+export interface VideoObject {
   '@type': 'VideoObject'
   name: string
   embedUrl: string
@@ -50,7 +50,7 @@ interface VideoObject {
   uploadDate: string
 }
 
-interface ImageObject {
+export interface ImageObject {
   '@type': 'ImageObject'
   contentUrl: string
 }

@@ -1,79 +1,29 @@
-export interface MovieData {
-  "#TITLE": string
-  "#YEAR": number
-  "#IMDB_ID": string
-  "#RANK"?: number
-  "#ACTORS"?: string
-  "#AKA"?: string
-  "#IMDB_URL"?: string
-  "#IMDB_IV"?: string
-  "#IMG_POSTER": string
-  "#TYPE"?: string
-  photo_width: number
-  photo_height: number
-}
+import {
+  MovieData as SdkMovieData,
+  SearchResponse as SdkSearchResponse,
+  SearchQuery as SdkSearchQuery,
+  Person as SdkPerson,
+  AggregateRating as SdkAggregateRating,
+  VideoObject as SdkVideoObject,
+  ImageObject as SdkImageObject,
+  Movie as SdkMovie,
+}  from '../sdk/src/types/movie'
 
-export interface SearchResponse {
-  description: MovieData[]
-  ok: boolean
-  error_code: number
-}
+export interface MovieData extends SdkMovieData {} 
 
-export interface SearchQuery {
-  q: string
-}
+export interface SearchResponse extends SdkSearchResponse {}
 
-interface Person {
-  '@type': 'Person'
-  url: string
-  name: string
-}
+export interface SearchQuery extends SdkSearchQuery {}
 
-interface AggregateRating {
-  '@type': 'AggregateRating'
-  ratingCount: number
-  bestRating: number
-  worstRating: number
-  ratingValue: number
-}
+interface Person extends SdkPerson {}
 
-interface VideoObject {
-  '@type': 'VideoObject'
-  name: string
-  embedUrl: string
-  thumbnail: ImageObject
-  thumbnailUrl: string
-  url: string
-  description: string
-  duration: string
-  uploadDate: string
-}
+interface AggregateRating extends SdkAggregateRating {}
 
-interface ImageObject {
-  '@type': 'ImageObject'
-  contentUrl: string
-}
+interface VideoObject extends SdkVideoObject {}
 
-export interface Movie {
-  '@context': string
-  '@type': string
-  url: string
-  name: string
-  image: string
-  description: string
-  aggregateRating: AggregateRating
-  contentRating: string
-  genre: string[]
-  datePublished: string
-  keywords: string
-  trailer: VideoObject
-  actor: Person[]
-  director: Person[]
-  creator: Person[]
-  duration: string
-  featuredReviews: ReviewsConnection
-  imbdId?: string
-}
+interface ImageObject extends SdkImageObject {}
+
+export interface Movie extends SdkMovie {}
 
 export interface MovieIbmdData {
   short: Movie

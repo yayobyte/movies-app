@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     starRating: {
       flexDirection: 'row',
       alignItems: 'center',
-      marginBottom: theme.spacing.lg,
+      marginBottom: theme.spacing.xl,
     },
   })
   
