@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { ApiService } from '../../api/ApiService'
-import { queryClient } from '../../config/QueryClient'
 
 export const useMovieListScreenContainer = () => {
 
