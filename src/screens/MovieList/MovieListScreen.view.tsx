@@ -9,8 +9,8 @@ import { SearchBar } from '@src/components/Search/SearchBar.view'
 import { MovieCard } from "@components/MovieCard/MovieCard.view"
 
 //TODO: Intl strings in a separated file
-const ERROR_MESSAGE = 'Error loading movies or the search.imdbot.workers.dev api might be offline'
-const EMPTY_LIST = 'No results with the provided strings or the search.imdbot.workers.dev api might be offline'
+const ERROR_MESSAGE = 'Error loading movies or check the connection to the local sdk'
+const EMPTY_LIST = 'No results with the provided strings or check the connection to the local sdk'
 
 export const MoviesListScreen = () => {
   const { data: movies, isLoading, error, search, setSearch } = useMovieListScreenContainer()

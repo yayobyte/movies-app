@@ -75,8 +75,13 @@ If you want to run the app directly to ios or android run any of these
 ### Iphone 14 Simulator
 ![Video Preview](./docs/ios_app.gif)
 
+### Android Simulator
+![Video Preview](./docs/ios_app.gif)
+
 ### Web
 ![Video Preview](./docs/web_app.gif)
 
 ### Troubleshooting
-If encountering issues where SDK dependencies are not recognized, ensure that you have run yarn install within the /sdk directory as mentioned in the installation steps. This setup allows the SDK to operate independently, requiring separate dependency management.
+1. If encountering issues where SDK dependencies are not recognized, ensure that you have run yarn install within the `/sdk` directory as mentioned in the installation steps. This setup allows the SDK to operate independently, requiring separate dependency management.
+
+2. If you are using android and you get an error while trying to connect to local sdk. Change the from `apiUrl = 'http://localhost'` to `apiUrl = 'http://192.168.0.1'` your local IP address and android studio is not able to resolve the IP adrress for any reason
