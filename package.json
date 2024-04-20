@@ -24,6 +24,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "start-web": "cd web && yarn start", 
     "start-sdk": "cd sdk && yarn sdk-build-start"
   },
   "version": "1.0.0",
