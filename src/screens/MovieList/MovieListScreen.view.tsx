@@ -3,9 +3,9 @@ import { View, Text, FlatList } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useMovieListScreenContainer } from './MovieListScreen.container'
 import { styles } from "./MoviesListScreen.styles"
-import { Loader } from '@src/components/UI/Loader/Loader.view'
-import { ErrorComponent } from '@src/components/UI/Error/Error.view'
-import { SearchBar } from '@src/components/SearchBar/SearchBar.view'
+import { Loader } from '@src/components/UserInterface/Loader/Loader.view'
+import { ErrorComponent } from '@src/components/UserInterface/Error/Error.view'
+import { SearchBar } from '@src/components/Search/SearchBar.view'
 import { MovieCard } from "@components/MovieCard/MovieCard.view"
 
 //TODO: Intl strings in a separated file

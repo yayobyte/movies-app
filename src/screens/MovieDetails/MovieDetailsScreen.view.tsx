@@ -5,8 +5,8 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import IconMaterial from 'react-native-vector-icons/MaterialIcons'
 
 import { useMovieDetailsContainer } from './MovieDetailsScreen.container'
-import { Loader } from '@src/components/UI/Loader/Loader.view'
-import { ErrorComponent } from '@src/components/UI/Error/Error.view'
+import { Loader } from '@src/components/UserInterface/Loader/Loader.view'
+import { ErrorComponent } from '@src/components/UserInterface/Error/Error.view'
 import { StarsRating } from '@src/components/StarsRating/StarsRating.view'
 
 import { styles } from './MovieDetailsScreen.styles'
