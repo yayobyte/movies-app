@@ -70,5 +70,13 @@ If you want to run the app directly to ios or android run any of these
   yarn start-web
   ```
 
+> The App has been tested in physical multiple devices and simulators, take a look at the following videos 
+
+### Iphone 14 Simulator
+![Video Preview](./docs/ios_app.gif)
+
+### Web
+![Video Preview](./docs/web_app.gif)
+
 ### Troubleshooting
 If encountering issues where SDK dependencies are not recognized, ensure that you have run yarn install within the /sdk directory as mentioned in the installation steps. This setup allows the SDK to operate independently, requiring separate dependency management.
