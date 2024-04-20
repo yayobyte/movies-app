@@ -17,7 +17,9 @@ Make sure you test this endpoint first as sometimes it is out.
 ### Prerequisites
 - Node.js and npm (or Yarn)
 - Expo CLI (for running the React Native app)
-- Ensure you have React Native setup for development: [Setting up the development environment](https://reactnative.dev/docs/environment-setup).
+- Install Xcode from app store
+- Install Command Line Tools: Open Xcode, choose Settings... from the Xcode menu (or press cmd ⌘ + ,). Go to the Locations and install the tools by selecting the most recent version in the Command Line Tools dropdown.
+- Install a new simulator: 
 - Request the sdk api key or make sure you received it by email
 - Have the `3000` and `3001` ports available to run the `react` app and `sdk` respectively
 
@@ -54,6 +56,13 @@ Open a new terminal and ensure that you are in the root folder
   ```bash
     yarn start
   ```
+Once you have the QR code generated in the console, you can press `i` for ios or `a` for android to use the simulator. Make sure you have `android adv manager` installed and/or the `xcode ios simulator`
+
+If you want to run the app directly to ios or android run any of these
+```bash
+  yarn run:ios
+  yarn run:android
+```
 
 6. **Start the react web app**
   Open a second new terminal and ensure that you are in the root folder
