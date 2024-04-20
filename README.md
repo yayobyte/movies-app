@@ -18,6 +18,8 @@ Make sure you test this endpoint first as sometimes it is out.
 - Node.js and npm (or Yarn)
 - Expo CLI (for running the React Native app)
 - Ensure you have React Native setup for development: [Setting up the development environment](https://reactnative.dev/docs/environment-setup).
+- Request the sdk api key or make sure you received it by email
+- Have the `3000` and `3001` ports available to run the `react` app and `sdk` respectively
 
 ### Installation
 1. **Clone the repository:**
