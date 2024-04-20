@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { MovieModel } from '../models/movie';
+import { MovieModel } from '../models/omdbapi/movie';
 
 export class MovieController {
 

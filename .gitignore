@@ -65,3 +65,6 @@ web-build/
 
 # Dist
 */dist/
+
+# Env
+/sdk/.env

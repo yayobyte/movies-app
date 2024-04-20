@@ -24,53 +24,53 @@ export interface SearchQuery {
 }
 
 interface Person {
-  '@type': 'Person';
-  url: string;
-  name: string;
+  '@type': 'Person'
+  url: string
+  name: string
 }
 
 interface AggregateRating {
-  '@type': 'AggregateRating';
-  ratingCount: number;
-  bestRating: number;
-  worstRating: number;
-  ratingValue: number;
+  '@type': 'AggregateRating'
+  ratingCount: number
+  bestRating: number
+  worstRating: number
+  ratingValue: number
 }
 
 interface VideoObject {
-  '@type': 'VideoObject';
-  name: string;
-  embedUrl: string;
-  thumbnail: ImageObject;
-  thumbnailUrl: string;
-  url: string;
-  description: string;
-  duration: string;
-  uploadDate: string;
+  '@type': 'VideoObject'
+  name: string
+  embedUrl: string
+  thumbnail: ImageObject
+  thumbnailUrl: string
+  url: string
+  description: string
+  duration: string
+  uploadDate: string
 }
 
 interface ImageObject {
-  '@type': 'ImageObject';
-  contentUrl: string;
+  '@type': 'ImageObject'
+  contentUrl: string
 }
 
 export interface Movie {
-  '@context': string;
-  '@type': string;
-  url: string;
-  name: string;
-  image: string;
-  description: string;
-  aggregateRating: AggregateRating;
-  contentRating: string;
-  genre: string[];
-  datePublished: string;
-  keywords: string;
-  trailer: VideoObject;
-  actor: Person[];
-  director: Person[];
-  creator: Person[];
-  duration: string;
+  '@context': string
+  '@type': string
+  url: string
+  name: string
+  image: string
+  description: string
+  aggregateRating: AggregateRating
+  contentRating: string
+  genre: string[]
+  datePublished: string
+  keywords: string
+  trailer: VideoObject
+  actor: Person[]
+  director?: Person
+  creator: Person[]
+  duration: string
 }
 
 export interface MovieIbmdData {

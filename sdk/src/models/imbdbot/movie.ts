@@ -1,4 +1,4 @@
-import { MovieData, SearchQuery, SearchResponse, MovieIbmdData} from "../types/movie"
+import { MovieData, SearchQuery, SearchResponse, MovieIbmdData} from "../../types/movie"
 
 const searchQueries = [
     "action", "drama", "comedy", "romance", "thriller",
@@ -23,6 +23,7 @@ export class MovieModel {
         const data: SearchResponse = await response.json()
 
         if (!response.ok) {
+            console.log('Error in the endpoint')
             throw new Error(`API call failed with status ${response.status}: ${response.statusText}`)
         }
 
