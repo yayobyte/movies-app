@@ -72,6 +72,7 @@ export interface Movie {
   director?: Person
   creator: Person[]
   duration: string
+  imbdId?: string
 }
 
 export interface MovieIbmdData {

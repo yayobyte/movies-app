@@ -1,4 +1,5 @@
-import { MovieData, SearchQuery, MovieIbmdData, Movie } from "../../types/movie"
+import { MovieData, SearchQuery, Movie } from "../../types/movie"
+import { mapApiDataToMovieIbmdData } from './movie.helper'
 
 const searchQueries = [
     "action", "drama", "comedy", "romance", "thriller",
@@ -39,8 +40,8 @@ export class MovieModel {
           "#IMDB_IV": "",
           "#IMG_POSTER": movie.Poster,
           "#TYPE": movie.Type,
-          photo_width: 300,
-          photo_height: 450
+          photo_width: 0,
+          photo_height: 0
         }))
       } else {
         throw new Error('Failed to fetch movies from fallback API')
@@ -51,7 +52,7 @@ export class MovieModel {
     }
   }
 
-  static async getMovieById({ tt }: SearchQuery): Promise<MovieIbmdData | undefined> {
+  static async getMovieById({ tt }: SearchQuery): Promise<Movie | undefined> {
     if (!tt) {
       throw new Error("IMDb ID 'tt' is required to fetch movie details")
     }
@@ -70,59 +71,7 @@ export class MovieModel {
       throw new Error(data.Error || 'Failed to fetch movie data')
     }
 
-    return this.mapApiDataToMovieIbmdData(data)
+    return mapApiDataToMovieIbmdData(data)
   }
 
-  private static mapApiDataToMovieIbmdData(data: any): MovieIbmdData {
-    const movie: Movie = {
-      '@context': 'https://schema.org',
-      '@type': 'Movie',
-      url: `https://www.imdb.com/title/${data.imdbID}/`,
-      name: data.Title,
-      image: data.Poster,
-      description: data.Plot,
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingCount: parseInt(data.imdbVotes.replace(/,/g, ''), 10),
-        bestRating: 10,
-        worstRating: 1,
-        ratingValue: parseFloat(data.imdbRating)
-      },
-      contentRating: data.Rated,
-      genre: data.Genre.split(', ').map((g: string) => g.trim()),
-      datePublished: data.Released,
-      keywords: data.Genre.replace(/, /g, ','),
-      trailer: {
-        '@type': 'VideoObject',
-        name: 'Official Trailer',
-        embedUrl: '', // Assume no data available
-        thumbnail: {
-          '@type': 'ImageObject',
-          contentUrl: data.Poster,
-        },
-        thumbnailUrl: data.Poster,
-        url: '', // Assume no data available
-        description: '',
-        duration: data.Runtime,
-        uploadDate: data.Released,
-      },
-      actor: data.Actors.split(', ').map((name: string) => ({
-        '@type': 'Person',
-        url: '', // No URL available
-        name,
-      })),
-      director: {
-        '@type': 'Person',
-        url: '', // No URL available
-        name: data.Director,
-      },
-      creator: [], // No data available
-      duration: data.Runtime
-    }
-
-    return {
-      short: movie,
-      imdbId: data.imdbID
-    }
-  }
 }

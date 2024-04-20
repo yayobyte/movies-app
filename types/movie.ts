@@ -72,6 +72,7 @@ export interface Movie {
   creator: Person[]
   duration: string
   featuredReviews: ReviewsConnection
+  imbdId?: string
 }
 
 export interface MovieIbmdData {
